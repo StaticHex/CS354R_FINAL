@@ -40,7 +40,7 @@ private:
 
 	float newY;
 
-	const int Array_size = 250;
+	const int Array_size = 500;
 
 protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Tarantula")
@@ -49,13 +49,16 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Stag Beetle")
 	TSubclassOf<AProc_bug> stagBeetle;
 
-	UPROPERTY(EditDefaultsOnly, Category = "Butterfly")
-	TSubclassOf<AProc_bug> butterfly;
+	UPROPERTY(EditDefaultsOnly, Category = "Scorpion")
+	TSubclassOf<AProc_bug> scorpion;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Tree")
 	TSubclassOf<AProc_bug> tree;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Fire Fly")
 	TSubclassOf<AProc_bug> firefly;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Gold Elephant beetle")
+	TSubclassOf<AProc_bug> geBeetle;
 	
 };

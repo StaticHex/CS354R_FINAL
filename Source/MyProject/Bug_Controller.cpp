@@ -41,7 +41,7 @@ void ABug_Controller::BeginPlay()
 			FVector newVec;
 			newVec.Set(newX, newY, 10.f);
 
-			int32 num = FMath::RandRange(0, 4);
+			int32 num = FMath::RandRange(0, 5);
 
 			if (num == 0)
 				AActor* newActor = GetWorld()->SpawnActor<AProc_bug>(tarantula, newVec, FRotator::ZeroRotator, spawnParams);
@@ -49,10 +49,13 @@ void ABug_Controller::BeginPlay()
 				AActor* newActor = GetWorld()->SpawnActor<AProc_bug>(stagBeetle, newVec, FRotator::ZeroRotator, spawnParams);
 			}
 			else if (num == 2) {
-				AActor* newActor = GetWorld()->SpawnActor<AProc_bug>(butterfly, newVec, FRotator::ZeroRotator, spawnParams);
+				AActor* newActor = GetWorld()->SpawnActor<AProc_bug>(scorpion, newVec, FRotator::ZeroRotator, spawnParams);
 			}
 			else if (num == 3) {
 				AActor* newActor = GetWorld()->SpawnActor<AProc_bug>(firefly, newVec, FRotator::ZeroRotator, spawnParams);
+			}
+			else if (num == 4) {
+				AActor* newActor = GetWorld()->SpawnActor<AProc_bug>(geBeetle, newVec, FRotator::ZeroRotator, spawnParams);
 			}
 			else 
 				AActor* newActor = GetWorld()->SpawnActor<AProc_bug>(tree, newVec, FRotator::ZeroRotator, spawnParams);
@@ -73,11 +76,11 @@ void ABug_Controller::Tick( float DeltaTime )
 float ABug_Controller::generateX(float oldUsedX) {
 	float passBack = 0.f;
 
-	passBack = FMath::RandRange(-10000, 10000);
+	passBack = FMath::RandRange(-20000, 20000);
 
 	passBack = passBack + oldUsedX;
 
-	if (passBack < -10000.f || passBack > 10000.f) {
+	if (passBack < -20000.f || passBack > 20000.f) {
 		passBack = generateX(oldUsedX);
 	}
 
@@ -91,11 +94,11 @@ float ABug_Controller::generateX(float oldUsedX) {
 float ABug_Controller::generateY(float oldUsedY) {
 	float passBack = 0.f;
 
-	passBack = FMath::RandRange(-10000, 10000);
+	passBack = FMath::RandRange(-20000, 20000);
 
 	passBack = passBack + oldUsedY;
 
-	if (passBack < -10000.f || passBack > 10000.f) {
+	if (passBack < -20000.f || passBack > 20000.f) {
 		passBack = generateY(oldUsedY);
 	}
 
